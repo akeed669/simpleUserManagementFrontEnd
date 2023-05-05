@@ -23,8 +23,18 @@ class RegisterForm extends Form {
     role:Joi.string().min(5).max(5).label("Role"),
   };
 
-  doSubmit = async () => {       
-    await userService.register(this.state.data);      
+  doSubmit = async () => {
+    try {
+      await userService.register(this.state.data);    
+
+    } catch (ex) {
+      //catch http response errors
+      if (ex.response && ex.response.status === 400) {
+        const errors = { ...this.state.errors };
+        errors.username = ex.response.data;
+        this.setState({ errors });
+      }
+    }
   };
 
   render() {
