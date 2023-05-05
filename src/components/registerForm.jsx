@@ -30,7 +30,7 @@ class RegisterForm extends Form {
       // call service function for registering
       auth.loginWithJwt(response.headers["x-auth-token"]);
       // redirect to home page
-      // window.location = "/";
+      window.location = "/home";
 
     } catch (ex) {
       //catch http response errors

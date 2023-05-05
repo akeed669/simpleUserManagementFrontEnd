@@ -13,8 +13,9 @@ http.setJwt(getJwt());
 export async function login(username, password) {
   //receive jwt token from server if login is success
   const { data: jwt } = await http.post(apiEndpoint, { username, password });
+
   //set jwt token in local storage of browser
-  localStorage.setItem(tokenKey, jwt);
+  localStorage.setItem(tokenKey, jwt.token);
 }
 
 //function receives jwt token from register form
@@ -24,7 +25,6 @@ export function loginWithJwt(jwt) {
 }
 
 //remove jwt token from local storage
-
 export function logout(user) {
   localStorage.removeItem(tokenKey);
 }
