@@ -24,11 +24,17 @@ axios.interceptors.response.use(null, (error) => {
   return Promise.reject(error);
 });
 
+//insert the jwt token into header
+function setJwt(jwt) {
+  axios.defaults.headers.common["x-auth-token"] = jwt;
+}
+
 const exportedObject = {
   get: axios.get,
   post: axios.post,
   put: axios.put,
   delete: axios.delete,
+  setJwt,
 };
 
 export default exportedObject;
