@@ -6,19 +6,14 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 class App extends Component {
-  state = {};
-
   render() {
     return (
-      <React.Fragment>
-        <div className="container">
-          {/*render all the routes*/}
-          <Routes>
-            <Route path="/register" component={RegisterForm} />
-            <Route path="/login" component={LoginForm} />
-          </Routes>
-        </div>
-      </React.Fragment>
+      <main className="container">
+        <Routes>
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/login" element={<LoginForm />} />
+        </Routes>
+      </main>
     );
   }
 }

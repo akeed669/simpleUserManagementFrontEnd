@@ -8,9 +8,13 @@ class RegisterForm extends Form {
       <div>
         <h1>Register</h1>
         <form>
-          {this.renderInput("username", "Username")}
+          {this.renderInput("email", "Email")}
           {this.renderInput("password", "Password", "password")}
           {this.renderInput("name", "Name")}
+          {this.renderInput("dob", "Date of Birth","date")}
+          {this.renderInput("telephone", "Telephone")}
+          {this.renderInput("designation", "Designation")}
+          {this.renderInput("role", "Role")}
           {this.renderButton("Register")}
         </form>
       </div>
