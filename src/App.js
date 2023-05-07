@@ -21,7 +21,6 @@ class App extends Component {
 
   render() {
     const user = auth.getCurrentUser();
-    console.log(user);
 
     return (
       <>
@@ -33,8 +32,8 @@ class App extends Component {
             <Route path="/register" element={<RegisterForm />} />
             <Route path="/login" element={<LoginForm />} />
             <Route path="/logout" element={<Logout />} />
-            <Route path="/home" element={<h1>you are home</h1>} />
-            <Route path="/" element={<h1>Welcome to user management!</h1>} />
+            <Route path="/home" element={<h1>Home Page</h1>} />
+            <Route path="/" element={<h1>Welcome to User Management!</h1>} />
           </Routes>
         </main>
       </>
